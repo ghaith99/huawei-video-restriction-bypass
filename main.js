@@ -8,7 +8,6 @@
 // @grant        none
 // ==/UserScript==
 
-
 var timer;
 var count = 1;
 timer = setInterval(inject, 3000);
@@ -25,8 +24,8 @@ function inject(){
                 dataType: 'json',
                 success: function (res) {
                     $('<li class="video-download-button">\n' +
-                      '<a href="' + res['origin_url'] + '" download>Download the video #'+count+'</a>\n' +
-                      '</li>').appendTo(".videojs_block")[0];
+                      '<a href="' + res['origin_url'] + '" download>Download the video #'+count+': '+ res["description"] +'</a>' +
+                      '</li><br/>').appendTo(".videojs_block")[0];
                     count += 1;
                     clearInterval(timer);
                 }
