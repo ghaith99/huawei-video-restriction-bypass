@@ -22,7 +22,6 @@ function inject(){
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function (res) {
-                        alert("inject2");
                     $('<li class="video-download-button">\n' +
                       '<a href="' + res['origin_url'] + '" download>Download the video</a>\n' +
                       '</li>').appendTo(".videojs_block")[0];
